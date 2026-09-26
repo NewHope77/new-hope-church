@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 450" fill="none" stroke="#fff" role="img" aria-label="New Hope Church Bielsko-Biała">
+  <defs>
+    <path id="lg-top" d="M 85.9 138.1 A 164 164 0 0 1 384.1 264.7"/>
+    <path id="lg-bot" d="M 79.2 327.1 A 178 178 0 0 0 215.7 402.8"/>
+  </defs>
+  <path d="M 409.4 271 A 190 190 0 1 1 41.5 175.8" stroke-width="2.2"/>
+  <path d="M 90 222 Q 190 108 330 262 M 90 222 Q 190 336 330 185" stroke-width="2.8" stroke-linecap="round"/>
+  <text fill="#fff" stroke="none" font-family="'Cormorant Garamond','Times New Roman',serif" font-size="46" font-weight="300" letter-spacing="1"><textPath href="#lg-top" startOffset="0" textLength="455" lengthAdjust="spacing">NEW HOPE CHURCH</textPath></text>
+  <text fill="#fff" stroke="none" font-family="'Manrope',Arial,sans-serif" font-size="26" font-weight="400"><textPath href="#lg-bot" startOffset="2%">Bielsko-Biała</textPath></text>
+</svg>
