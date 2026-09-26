@@ -16,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=Manrope:wght@400;500;700;800&family=Unbounded:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Church","name":"New Hope Church Bielsko-Biała","alternateName":"Церква New Hope","address":{"@type":"PostalAddress","streetAddress":"ul. Michała Grażyńskiego 20","postalCode":"43-300","addressLocality":"Bielsko-Biała","addressCountry":"PL"},"telephone":"+48788881887","geo":{"@type":"GeoCoordinates","latitude":49.8303965,"longitude":19.0473},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00"},"sameAs":["https://www.instagram.com/new.hopechurchbb/"]}
+{"@context":"https://schema.org","@type":"Church","name":"New Hope Church Bielsko-Biała","alternateName":"Церква New Hope","address":{"@type":"PostalAddress","streetAddress":"ul. Michała Grażyńskiego 20","postalCode":"43-300","addressLocality":"Bielsko-Biała","addressCountry":"PL"},"telephone":"+48788881887","geo":{"@type":"GeoCoordinates","latitude":49.8303965,"longitude":19.0500375},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00"},"sameAs":["https://www.instagram.com/new.hopechurchbb/"]}
 </script>
 </head>
 <body>
@@ -34,6 +34,7 @@
     <a href="#about">Хто ми</a>
     <a href="#sunday">Неділя</a>
     <a href="#ministries">Служіння</a>
+    <a href="#cafe">Кав'ярня</a>
     <a href="#conference">Конференція</a>
     <a href="#life">Життя церкви</a>
     <a href="#visit" class="nav__cta">Прийти в неділю</a>
@@ -128,19 +129,31 @@
   <h2 class="h2 reveal">Місце <em>для кожного</em></h2>
   <div class="cards">
     <article class="card reveal">
-      <figure><img src="img/kids.jpg" alt="Діти в недільній школі" width="360" height="640" loading="lazy"></figure>
+      <button class="card__media" type="button" data-gallery="img/kids.jpg|Дитяче свято в церкві;img/church-family.jpg|Уся церковна сім'я разом" data-title="Недільна школа" aria-label="Відкрити галерею: Недільна школа">
+        <img src="img/kids.jpg" alt="Діти в недільній школі" width="360" height="640" loading="lazy">
+        <span class="card__count">2 фото ↗</span>
+      </button>
       <div class="card__body"><h3>Недільна школа</h3><p>Поки дорослі на служінні, діти вивчають Біблію через історії, ігри і творчість.</p></div>
     </article>
     <article class="card reveal">
-      <figure><img src="img/youth-trip.jpg" alt="Молодіжне служіння Youth" width="361" height="640" loading="lazy"></figure>
+      <button class="card__media" type="button" data-gallery="img/youth-trip.jpg|Молодь у поїздці;img/youth-night.jpg|Молодіжний вечір;img/youth.jpg|Молодь на природі;img/youth-christmas.jpg|Різдвяна зустріч;img/cafe-youth.jpg|Спілкування за столом" data-title="Youth" aria-label="Відкрити галерею: Youth">
+        <img src="img/youth-trip.jpg" alt="Молодіжне служіння Youth" width="361" height="640" loading="lazy">
+        <span class="card__count">5 фото ↗</span>
+      </button>
       <div class="card__body"><h3>Youth</h3><p>Молодіжні зустрічі, поїздки і табори. Віра, дружба і пригоди.</p><a href="https://www.instagram.com/youth_newhope_/" target="_blank" rel="noopener">@youth_newhope_ ↗</a></div>
     </article>
     <article class="card reveal">
-      <figure><img src="img/worship.jpg" alt="Команда прославлення" width="360" height="640" loading="lazy"></figure>
+      <button class="card__media" type="button" data-gallery="img/worship-cross.jpg|Поклоніння біля хреста;img/worship.jpg|Команда прославлення;img/worship-night.jpg|Вечір поклоніння;img/band.jpg|Музиканти;img/worship-duo.jpg|Прославлення;img/hall.jpg|Зал церкви;img/media.jpg|Медіа-команда за пультом" data-title="Worship" aria-label="Відкрити галерею: Worship">
+        <img src="img/worship.jpg" alt="Команда прославлення" width="360" height="640" loading="lazy">
+        <span class="card__count">7 фото ↗</span>
+      </button>
       <div class="card__body"><h3>Worship</h3><p>Команда прославлення, що веде церкву в поклоніння. Співаєш чи граєш — долучайся.</p></div>
     </article>
     <article class="card reveal">
-      <figure><img src="img/family.jpg" alt="Сімейний вечір у церкві" width="359" height="640" loading="lazy"></figure>
+      <button class="card__media" type="button" data-gallery="img/family.jpg|Церковна сім'я;img/church-family.jpg|Святкування разом;img/service.jpg|Недільне служіння;img/shine.jpg|Радість зустрічі;img/speaker.jpg|Слово на служінні" data-title="Сімейні вечори" aria-label="Відкрити галерею: Сімейні вечори">
+        <img src="img/family.jpg" alt="Сімейний вечір у церкві" width="359" height="640" loading="lazy">
+        <span class="card__count">5 фото ↗</span>
+      </button>
       <div class="card__body"><h3>Сімейні вечори</h3><p>Теплі зустрічі для подружжя і сімей: спілкування, молитва, підтримка.</p></div>
     </article>
     <article class="card card--text reveal">
@@ -153,13 +166,27 @@
   </div>
 </section>
 
+<!-- CAFE -->
+<section class="cafe section" id="cafe">
+  <div class="cafe__text">
+    <p class="kicker reveal">04 — Кав'ярня</p>
+    <h2 class="h2 reveal">Кава після <em>служіння</em></h2>
+    <p class="reveal">Після недільного служіння ми не поспішаємо додому. У церковній кав'ярні можна взяти каву, посидіти, поговорити і познайомитися. Саме тут новенькі найшвидше стають своїми.</p>
+    <p class="cafe__note reveal">Щонеділі після служіння · ul. Michała Grażyńskiego 20</p>
+  </div>
+  <div class="cafe__media">
+    <button class="cafe__img reveal" type="button" data-gallery="img/cafe-coffee.jpg|Кава після служіння;img/cafe-youth.jpg|Спілкування за столом;img/family.jpg|Разом після служіння" data-title="Кав'ярня" aria-label="Відкрити галерею: Кав'ярня"><img src="img/cafe-coffee.jpg" alt="Усмішка і кава після служіння" width="720" height="1280" loading="lazy"></button>
+    <button class="cafe__img reveal" type="button" data-gallery="img/cafe-youth.jpg|Спілкування за столом;img/cafe-coffee.jpg|Кава після служіння;img/family.jpg|Разом після служіння" data-title="Кав'ярня" aria-label="Відкрити галерею: Кав'ярня"><img src="img/cafe-youth.jpg" alt="Молодь за столом з частуванням" width="1280" height="960" loading="lazy"></button>
+  </div>
+</section>
+
 <!-- CONFERENCE -->
 <section class="conference section" id="conference">
   <div class="conference__media reveal">
     <img src="img/conference.jpg" alt="Спікери конференції Максим та Юлія Білоусови" width="640" height="640" loading="lazy">
   </div>
   <div class="conference__text">
-    <p class="kicker reveal">04 — Подія</p>
+    <p class="kicker reveal">05 — Подія</p>
     <h2 class="h2 reveal">Я чую <em>Твій голос</em></h2>
     <p class="conference__meta reveal">Пророча конференція · 9–10 жовтня 2026</p>
     <p class="reveal">Два дні навчання, поклоніння і практики. Біблійні основи пророчого служіння, розпізнавання Божого голосу. Спікери — Максим та Юлія Білоусови.</p>
@@ -174,10 +201,11 @@
 <!-- LIFE / GALLERY -->
 <section class="life section" id="life">
   <div class="life__head">
-    <p class="kicker reveal">05 — Життя церкви</p>
+    <p class="kicker reveal">06 — Життя церкви</p>
     <h2 class="h2 reveal">Моменти, <em>які ми бережемо</em></h2>
   </div>
   <div class="masonry">
+    <img class="reveal" src="img/hall.jpg" alt="Зал церкви New Hope" width="1400" height="1050" loading="lazy">
     <img class="reveal" src="img/band.jpg" alt="Музиканти під час поклоніння" width="361" height="640" loading="lazy">
     <img class="reveal" src="img/shine.jpg" alt="Учасниця служіння з написом Shine" width="360" height="640" loading="lazy">
     <img class="reveal" src="img/preach.jpg" alt="Проповідь у неділю" width="360" height="640" loading="lazy">
@@ -190,7 +218,7 @@
 
 <!-- VISIT -->
 <section class="visit section" id="visit">
-  <p class="kicker reveal">06 — Як нас знайти</p>
+  <p class="kicker reveal">07 — Як нас знайти</p>
   <h2 class="h2 visit__title reveal">Неділя. 10:00.<br><em>Приходь як є.</em></h2>
   <div class="visit__grid">
     <div class="visit__info">
@@ -212,6 +240,37 @@
       <iframe title="Карта: New Hope Church, ul. Michała Grażyńskiego 20" src="https://www.google.com/maps?q=Micha%C5%82a+Gra%C5%BCy%C5%84skiego+20,+43-300+Bielsko-Bia%C5%82a&z=16&hl=uk&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
+
+  <div class="bus reveal" id="bus">
+    <h3 class="bus__title">Автобусом у неділю</h3>
+    <p class="bus__lead">Міські автобуси MZK Bielsko-Biała. Час — прибуття на зупинку перед служінням о 10:00.</p>
+    <div class="bus__grid">
+      <article class="bus__card bus__card--main">
+        <div class="bus__lines"><span>31</span></div>
+        <h4>Зупинка «Grażyńskiego Okrzei»</h4>
+        <p class="bus__walk">~35 м — просто біля входу</p>
+        <p>Напрямок Podwale Dworzec (з Hałcnów, Komorowice).<br>Прибуває о <b>9:15</b>.</p>
+        <p class="bus__back">Назад від «Podwale Dworzec»: <b>11:38</b>, <b>13:03</b></p>
+      </article>
+      <article class="bus__card">
+        <div class="bus__lines"><span>3</span><span>17</span><span>33</span></div>
+        <h4>Зупинка «Komorowicka TSL»</h4>
+        <p class="bus__walk">~350 м — 5 хв пішки</p>
+        <ul>
+          <li><b>3</b> → Szpital Wojewódzki: 9:40 · → Komorowice: 9:01, 9:43</li>
+          <li><b>17</b> → Lotnisko: 9:15</li>
+          <li><b>33</b> → Warszawska Dworzec: 9:12 · → Mazańcowice: 9:46</li>
+        </ul>
+      </article>
+      <article class="bus__card">
+        <div class="bus__lines"><span>PKP</span></div>
+        <h4>Вокзал Bielsko-Biała Główna</h4>
+        <p class="bus__walk">~400 м — 5–7 хв пішки</p>
+        <p>Зупинки «3 Maja Dworzec», «Warszawska Dworzec» — тут у неділю зупиняється більшість міських ліній. Поруч автовокзал.</p>
+      </article>
+    </div>
+    <p class="bus__src">Розклад може змінюватися — перевір актуальний на <a href="https://komunikacja.bielsko-biala.pl/index.php/rozklad-jazdy-do-wydruku/" target="_blank" rel="noopener">komunikacja.bielsko-biala.pl ↗</a> або в <a href="https://jakdojade.pl/bielsko-biala" target="_blank" rel="noopener">Jakdojade ↗</a></p>
+  </div>
 </section>
 
 </main>
@@ -225,6 +284,21 @@
   </nav>
   <p class="footer__copy">© 2026 New Hope Church Bielsko-Biała</p>
 </footer>
+
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Галерея" hidden>
+  <div class="lightbox__top">
+    <p class="lightbox__title"></p>
+    <span class="lightbox__count"></span>
+    <button class="lightbox__close" type="button" aria-label="Закрити">✕</button>
+  </div>
+  <div class="lightbox__stage">
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Попереднє фото">←</button>
+    <figure class="lightbox__figure"><img alt=""><figcaption></figcaption></figure>
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Наступне фото">→</button>
+  </div>
+  <div class="lightbox__thumbs"></div>
+</div>
 
 <template id="logo-tpl">
 <svg viewBox="0 0 450 450" fill="none" stroke="currentColor" role="img" aria-label="New Hope Church Bielsko-Biała">
