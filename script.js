@@ -93,20 +93,21 @@
   const lbTitle = lb.querySelector('.lightbox__title');
   const lbCount = lb.querySelector('.lightbox__count');
   const lbThumbs = lb.querySelector('.lightbox__thumbs');
-  let items = [], idx = 0, lastFocus = null;
+  let items = [], idx = 0, lastFocus = null, titleKey = '';
   const show = i => {
     idx = (i + items.length) % items.length;
     lbImg.src = items[idx].src;
-    lbImg.alt = items[idx].cap;
-    lbCap.textContent = items[idx].cap;
+    lbImg.alt = I18N.t(items[idx].cap);
+    lbCap.textContent = I18N.t(items[idx].cap);
     lbCount.textContent = `${idx + 1} / ${items.length}`;
     lbThumbs.querySelectorAll('button').forEach((b, k) => b.classList.toggle('is-active', k === idx));
     lbThumbs.children[idx]?.scrollIntoView({ block: 'nearest', inline: 'center' });
   };
   const openLb = btn => {
     items = btn.dataset.gallery.split(';').map(x => { const [src, cap] = x.split('|'); return { src, cap }; });
-    lbTitle.textContent = btn.dataset.title;
-    lbThumbs.innerHTML = items.map((it, k) => `<button type="button" aria-label="Фото ${k + 1}"><img src="${it.src}" alt=""></button>`).join('');
+    titleKey = btn.dataset.title;
+    lbTitle.textContent = I18N.t(titleKey);
+    lbThumbs.innerHTML = items.map((it, k) => `<button type="button" aria-label="${I18N.t(it.cap)}"><img src="${it.src}" alt=""></button>`).join('');
     lbThumbs.querySelectorAll('button').forEach((b, k) => b.addEventListener('click', () => show(k)));
     lb.querySelectorAll('.lightbox__nav').forEach(b => { b.hidden = items.length < 2; });
     lastFocus = btn;
@@ -142,6 +143,52 @@
     if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
     tx = null;
   });
+
+
+  // language: ?lang= in the URL, then the saved choice, then Ukrainian
+  const galleryBtns = document.querySelectorAll('[data-gallery]');
+  const mapFrame = document.querySelector('.visit__map iframe');
+  I18N.onChange(lang => {
+    galleryBtns.forEach(b => {
+      const n = b.dataset.gallery.split(';').length;
+      const count = b.querySelector('.card__count');
+      if (count) count.textContent = I18N.photos(n, lang) + ' ↗';
+      b.setAttribute('aria-label', `${I18N.t('lb.open')}: ${I18N.t(b.dataset.title)}`);
+    });
+    const src = mapFrame.getAttribute('src').replace(/hl=[a-z]+/, 'hl=' + lang);
+    if (src !== mapFrame.getAttribute('src')) mapFrame.setAttribute('src', src);
+    if (!lb.hidden) { lbTitle.textContent = I18N.t(titleKey); show(idx); }
+    updateThemeLabel();
+  });
+  document.querySelectorAll('[data-lang]').forEach(b => b.addEventListener('click', () => {
+    I18N.apply(b.dataset.lang);
+    const url = new URL(location.href);
+    url.searchParams.set('lang', b.dataset.lang);
+    history.replaceState(null, '', url);
+  }));
+
+  // theme: dark by default, light on request, remembered
+  const root = document.documentElement;
+  const themeBtn = document.querySelector('.theme-toggle');
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  function updateThemeLabel() {
+    const light = root.dataset.theme === 'light';
+    const label = I18N.t(light ? 'ui.toDark' : 'ui.toLight');
+    themeBtn.setAttribute('aria-label', label);
+    themeBtn.title = label;
+    themeBtn.setAttribute('aria-pressed', String(light));
+    themeMeta.setAttribute('content', light ? '#f6f2ea' : '#000000');
+  }
+  themeBtn.addEventListener('click', () => {
+    const light = root.dataset.theme !== 'light';
+    if (light) root.dataset.theme = 'light'; else delete root.dataset.theme;
+    try { localStorage.setItem('nh-theme', light ? 'light' : 'dark'); } catch (e) {}
+    updateThemeLabel();
+  });
+
+  let startLang = new URLSearchParams(location.search).get('lang');
+  if (!startLang) { try { startLang = localStorage.getItem('nh-lang'); } catch (e) {} }
+  I18N.apply(startLang || 'uk');
 
   // countdown to next Sunday 10:00 (Warsaw time); "live" during 10:00–12:00
   const out = k => document.querySelector(`[data-cd="${k}"]`);

@@ -11,10 +11,16 @@
 <meta property="og:title" content="New Hope Church Bielsko-Biała">
 <meta property="og:description" content="Ми такі різні, але Бог об'єднав нас. Чекаємо на тебе щонеділі о 10:00.">
 <meta property="og:image" content="img/family.jpg">
+<script>
+  // apply saved theme / language before first paint (default: dark, Ukrainian)
+  try {
+    if (localStorage.getItem('nh-theme') === 'light') document.documentElement.dataset.theme = 'light';
+  } catch (e) {}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=Manrope:wght@400;500;700;800&family=Unbounded:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=4">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Church","name":"New Hope Church Bielsko-Biała","alternateName":"Церква New Hope","address":{"@type":"PostalAddress","streetAddress":"ul. Michała Grażyńskiego 20","postalCode":"43-300","addressLocality":"Bielsko-Biała","addressCountry":"PL"},"telephone":"+48788881887","geo":{"@type":"GeoCoordinates","latitude":49.8303965,"longitude":19.0500375},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00"},"sameAs":["https://www.instagram.com/new.hopechurchbb/","https://t.me/+852F0uPRACFiYjYy"]}
 </script>
@@ -25,20 +31,31 @@
 <div class="grain" aria-hidden="true"></div>
 
 <header class="nav" id="top">
-  <a href="#top" class="nav__brand" aria-label="New Hope Church — на початок">
+  <a href="#top" class="nav__brand" aria-label="New Hope Church — на початок" data-i18n-attr="aria-label:nav.home">
     <span class="nav__logo" data-logo></span>
     <span class="nav__name">New Hope</span>
   </a>
-  <button class="nav__burger" aria-label="Меню" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
   <nav class="nav__menu" id="menu">
-    <a href="#about">Хто ми</a>
-    <a href="#sunday">Неділя</a>
-    <a href="#ministries">Служіння</a>
-    <a href="#cafe">Кав'ярня</a>
-    <a href="#conference">Конференція</a>
-    <a href="#life">Життя церкви</a>
-    <a href="#visit" class="nav__cta">Прийти в неділю</a>
+    <a href="#about" data-i18n="nav.about">Хто ми</a>
+    <a href="#sunday" data-i18n="nav.sunday">Неділя</a>
+    <a href="#ministries" data-i18n="nav.ministries">Служіння</a>
+    <a href="#cafe" data-i18n="nav.cafe">Кав'ярня</a>
+    <a href="#conference" data-i18n="nav.conf">Конференція</a>
+    <a href="#life" data-i18n="nav.life">Життя церкви</a>
+    <a href="#visit" class="nav__cta" data-i18n="nav.cta">Прийти в неділю</a>
   </nav>
+  <div class="nav__tools">
+    <div class="lang" role="group" aria-label="Мова · Język · Language">
+      <button type="button" data-lang="uk" aria-pressed="true" lang="uk" title="Українська">UA</button>
+      <button type="button" data-lang="pl" aria-pressed="false" lang="pl" title="Polski">PL</button>
+      <button type="button" data-lang="en" aria-pressed="false" lang="en" title="English">EN</button>
+    </div>
+    <button class="theme-toggle" type="button" aria-label="Світла тема" title="Світла тема">
+      <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></svg>
+    </button>
+    <button class="nav__burger" aria-label="Меню" data-i18n-attr="aria-label:nav.menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  </div>
 </header>
 
 <main>
@@ -46,16 +63,16 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero__inner">
-    <p class="kicker reveal">Християнська церква · Bielsko-Biała</p>
+    <p class="kicker reveal" data-i18n="hero.kicker">Християнська церква · Bielsko-Biała</p>
     <h1 class="hero__title">
-      <span class="line reveal"><span>Нова</span></span>
-      <span class="line reveal"><em>надія</em> <svg class="fish" viewBox="0 0 260 120" aria-hidden="true"><path d="M8 62 Q 108 -40 250 98 M8 62 Q 108 164 250 22"/></svg></span>
-      <span class="line reveal"><span>для кожного</span></span>
+      <span class="line reveal"><span data-i18n="hero.l1">Нова</span></span>
+      <span class="line reveal"><em data-i18n="hero.l2">надія</em> <svg class="fish" viewBox="0 0 260 120" aria-hidden="true"><path d="M8 62 Q 108 -40 250 98 M8 62 Q 108 164 250 22"/></svg></span>
+      <span class="line reveal"><span data-i18n="hero.l3">для кожного</span></span>
     </h1>
-    <p class="hero__lead reveal">Ми такі різні, але Бог об'єднав нас. Різні характери, історії та таланти — одне серце.</p>
+    <p class="hero__lead reveal" data-i18n="hero.lead">Ми такі різні, але Бог об'єднав нас. Різні характери, історії та таланти — одне серце.</p>
     <div class="hero__actions reveal">
-      <a href="#visit" class="btn btn--light">Чекаємо в неділю о 10:00</a>
-      <a href="https://t.me/+852F0uPRACFiYjYy" target="_blank" rel="noopener" class="btn btn--ghost"><svg class="tg-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.6 19.9c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.5l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.5 3c.9-.3 1.7.2 1.4 1.3z"/></svg>Telegram-група</a>
+      <a href="#visit" class="btn btn--light" data-i18n="hero.cta">Чекаємо в неділю о 10:00</a>
+      <a href="https://t.me/+852F0uPRACFiYjYy" target="_blank" rel="noopener" class="btn btn--ghost"><svg class="tg-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.6 19.9c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.5l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.5 3c.9-.3 1.7.2 1.4 1.3z"/></svg><span data-i18n="hero.tg">Telegram-група</span></a>
       <a href="https://www.instagram.com/new.hopechurchbb/" target="_blank" rel="noopener" class="btn btn--ghost">Instagram ↗</a>
     </div>
   </div>
@@ -63,49 +80,47 @@
   <div class="hero__badge reveal" data-logo></div>
 
   <div class="countdown reveal" aria-live="polite">
-    <span class="countdown__label">До недільного служіння</span>
+    <span class="countdown__label" data-i18n="cd.label">До недільного служіння</span>
     <div class="countdown__grid">
-      <div><b data-cd="d">0</b><small>днів</small></div>
-      <div><b data-cd="h">00</b><small>год</small></div>
-      <div><b data-cd="m">00</b><small>хв</small></div>
-      <div><b data-cd="s">00</b><small>сек</small></div>
+      <div><b data-cd="d">0</b><small data-i18n="cd.d">днів</small></div>
+      <div><b data-cd="h">00</b><small data-i18n="cd.h">год</small></div>
+      <div><b data-cd="m">00</b><small data-i18n="cd.m">хв</small></div>
+      <div><b data-cd="s">00</b><small data-i18n="cd.s">сек</small></div>
     </div>
-    <span class="countdown__live" hidden>● Служіння триває зараз — заходь!</span>
+    <span class="countdown__live" hidden data-i18n="cd.live">● Служіння триває зараз — заходь!</span>
   </div>
 </section>
 
 <!-- FILM STRIP -->
-<section class="strip" aria-label="Фото з життя церкви">
+<section class="strip" aria-label="Фото з життя церкви" data-i18n-attr="aria-label:strip.label">
   <div class="strip__track">
-    <img src="img/family.jpg" alt="Члени церкви New Hope разом" width="359" height="640" loading="lazy">
-    <img src="img/worship.jpg" alt="Команда прославлення на сцені" width="360" height="640" loading="lazy">
-    <img src="img/youth-trip.jpg" alt="Молодь New Hope у поїздці" width="361" height="640" loading="lazy">
-    <img src="img/preach.jpg" alt="Проповідь у неділю" width="360" height="640" loading="lazy">
-    <img src="img/kids.jpg" alt="Діти на святі в церкві" width="360" height="640" loading="lazy">
-    <img src="img/shine.jpg" alt="Усмішка на служінні" width="360" height="640" loading="lazy">
-    <img src="img/band.jpg" alt="Музиканти під час поклоніння" width="361" height="640" loading="lazy">
-    <img src="img/youth.jpg" alt="Молодь на природі" width="359" height="640" loading="lazy">
-    <img src="img/speaker.jpg" alt="Виступ на служінні" width="360" height="640" loading="lazy">
+    <img src="img/family.jpg" alt="Церковна сім'я" data-i18n-attr="alt:cap.churchFamily" width="359" height="640" loading="lazy">
+    <img src="img/worship.jpg" alt="Команда прославлення" data-i18n-attr="alt:cap.wTeam" width="360" height="640" loading="lazy">
+    <img src="img/youth-trip.jpg" alt="Молодь у поїздці" data-i18n-attr="alt:cap.youthTrip" width="361" height="640" loading="lazy">
+    <img src="img/preach.jpg" alt="Слово на служінні" data-i18n-attr="alt:cap.word" width="360" height="640" loading="lazy">
+    <img src="img/kids.jpg" alt="Дитяче свято в церкві" data-i18n-attr="alt:cap.kidsFest" width="360" height="640" loading="lazy">
+    <img src="img/shine.jpg" alt="Радість зустрічі" data-i18n-attr="alt:cap.joy" width="360" height="640" loading="lazy">
+    <img src="img/band.jpg" alt="Музиканти" data-i18n-attr="alt:cap.musicians" width="361" height="640" loading="lazy">
+    <img src="img/youth.jpg" alt="Молодь на природі" data-i18n-attr="alt:cap.youthNature" width="359" height="640" loading="lazy">
+    <img src="img/speaker.jpg" alt="Слово на служінні" data-i18n-attr="alt:cap.word" width="360" height="640" loading="lazy">
   </div>
 </section>
 
 <!-- MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee__track">
-    <span>Віра</span><i>✦</i><span>Сім'я</span><i>✦</i><span>Поклоніння</span><i>✦</i><span>Надія</span><i>✦</i><span>Дім</span><i>✦</i>
-    <span>Віра</span><i>✦</i><span>Сім'я</span><i>✦</i><span>Поклоніння</span><i>✦</i><span>Надія</span><i>✦</i><span>Дім</span><i>✦</i>
+    <span data-i18n="mq.1">Віра</span><i>✦</i><span data-i18n="mq.2">Сім'я</span><i>✦</i><span data-i18n="mq.3">Поклоніння</span><i>✦</i><span data-i18n="mq.4">Надія</span><i>✦</i><span data-i18n="mq.5">Дім</span><i>✦</i>
+    <span data-i18n="mq.1">Віра</span><i>✦</i><span data-i18n="mq.2">Сім'я</span><i>✦</i><span data-i18n="mq.3">Поклоніння</span><i>✦</i><span data-i18n="mq.4">Надія</span><i>✦</i><span data-i18n="mq.5">Дім</span><i>✦</i>
   </div>
 </div>
 
 <!-- ABOUT -->
 <section class="about section" id="about">
-  <p class="kicker reveal">01 — Хто ми</p>
-  <blockquote class="about__quote reveal">
-    Церква — це не просто місце, куди приходять по неділях. <em>Це сім'я. Це дім.</em> Місце, де ми разом шукаємо Бога і поклоняємося Йому.
-  </blockquote>
+  <p class="kicker reveal" data-i18n="about.kicker">01 — Хто ми</p>
+  <blockquote class="about__quote reveal" data-i18n="about.quote">Церква — це не просто місце, куди приходять по неділях. <em>Це сім'я. Це дім.</em> Місце, де ми разом шукаємо Бога і поклоняємося Йому.</blockquote>
   <div class="about__cols">
-    <p class="reveal">New Hope — українська християнська церква в серці Бельсько-Бялої. Сюди приходять ті, хто вже давно з Богом, і ті, хто робить перший крок. Без дрескоду і без церемоній — з живим поклонінням і чесним словом.</p>
-    <p class="reveal">Пастор церкви — <a href="https://www.instagram.com/denis.neprokin/" target="_blank" rel="noopener">Денис Непрокін</a>. Ми віримо, що в Божій сім'ї є місце для кожного: для дітей і батьків, для молоді й старших, для тих, хто щойно переїхав до Польщі і шукає своїх.</p>
+    <p class="reveal" data-i18n="about.p1">New Hope — українська християнська церква в серці Бельсько-Бялої. Сюди приходять ті, хто вже давно з Богом, і ті, хто робить перший крок. Без дрескоду і без церемоній — з живим поклонінням і чесним словом.</p>
+    <p class="reveal" data-i18n="about.p2">Пастор церкви — <a href="https://www.instagram.com/denis.neprokin/" target="_blank" rel="noopener">Денис Непрокін</a>. Ми віримо, що в Божій сім'ї є місце для кожного: для дітей і батьків, для молоді й старших, для тих, хто щойно переїхав до Польщі і шукає своїх.</p>
   </div>
 </section>
 
@@ -113,54 +128,54 @@
 <section class="sunday section" id="sunday">
   <div class="sunday__big reveal" aria-hidden="true">10:00</div>
   <div class="sunday__content">
-    <p class="kicker reveal">02 — Неділя</p>
-    <h2 class="h2 reveal">Що чекає на тебе <em>в неділю</em></h2>
+    <p class="kicker reveal" data-i18n="sunday.kicker">02 — Неділя</p>
+    <h2 class="h2 reveal" data-i18n="sunday.h2">Що чекає на тебе <em>в неділю</em></h2>
     <ol class="steps">
-      <li class="reveal"><span>01</span><div><h3>Зустріч</h3><p>Тебе привітають біля входу і допоможуть зорієнтуватися.</p></div></li>
-      <li class="reveal"><span>02</span><div><h3>Поклоніння</h3><p>Жива музика і спів разом — сучасні пісні, щире серце.</p></div></li>
-      <li class="reveal"><span>03</span><div><h3>Слово</h3><p>Проповідь з Біблії — зрозуміло, про реальне життя.</p></div></li>
-      <li class="reveal"><span>04</span><div><h3>Спілкування</h3><p>Після служіння — час для розмов. Тут легко знайти друзів.</p></div></li>
+      <li class="reveal"><span>01</span><div><h3 data-i18n="step1.h">Зустріч</h3><p data-i18n="step1.p">Тебе привітають біля входу і допоможуть зорієнтуватися.</p></div></li>
+      <li class="reveal"><span>02</span><div><h3 data-i18n="step2.h">Поклоніння</h3><p data-i18n="step2.p">Жива музика і спів разом — сучасні пісні, щире серце.</p></div></li>
+      <li class="reveal"><span>03</span><div><h3 data-i18n="step3.h">Слово</h3><p data-i18n="step3.p">Проповідь з Біблії — зрозуміло, про реальне життя.</p></div></li>
+      <li class="reveal"><span>04</span><div><h3 data-i18n="step4.h">Спілкування</h3><p data-i18n="step4.p">Після служіння — час для розмов. Тут легко знайти друзів.</p></div></li>
     </ol>
   </div>
 </section>
 
 <!-- MINISTRIES -->
 <section class="ministries section" id="ministries">
-  <p class="kicker reveal">03 — Служіння</p>
-  <h2 class="h2 reveal">Місце <em>для кожного</em></h2>
+  <p class="kicker reveal" data-i18n="min.kicker">03 — Служіння</p>
+  <h2 class="h2 reveal" data-i18n="min.h2">Місце <em>для кожного</em></h2>
   <div class="cards">
     <article class="card reveal">
-      <button class="card__media" type="button" data-gallery="img/kids.jpg|Дитяче свято в церкві;img/church-family.jpg|Уся церковна сім'я разом" data-title="Недільна школа" aria-label="Відкрити галерею: Недільна школа">
-        <img src="img/kids.jpg" alt="Діти в недільній школі" width="360" height="640" loading="lazy">
-        <span class="card__count">2 фото ↗</span>
+      <button class="card__media" type="button" data-gallery="img/kids.jpg|cap.kidsFest;img/church-family.jpg|cap.allFamily" data-title="kids.h">
+        <img src="img/kids.jpg" alt="Дитяче свято в церкві" data-i18n-attr="alt:cap.kidsFest" width="360" height="640" loading="lazy">
+        <span class="card__count"></span>
       </button>
-      <div class="card__body"><h3>Недільна школа</h3><p>Поки дорослі на служінні, діти вивчають Біблію через історії, ігри і творчість.</p></div>
+      <div class="card__body"><h3 data-i18n="kids.h">Недільна школа</h3><p data-i18n="kids.p">Поки дорослі на служінні, діти вивчають Біблію через історії, ігри і творчість.</p></div>
     </article>
     <article class="card reveal">
-      <button class="card__media" type="button" data-gallery="img/youth-trip.jpg|Молодь у поїздці;img/youth-night.jpg|Молодіжний вечір;img/youth.jpg|Молодь на природі;img/youth-christmas.jpg|Різдвяна зустріч;img/cafe-youth.jpg|Спілкування за столом" data-title="Youth" aria-label="Відкрити галерею: Youth">
-        <img src="img/youth-trip.jpg" alt="Молодіжне служіння Youth" width="361" height="640" loading="lazy">
-        <span class="card__count">5 фото ↗</span>
+      <button class="card__media" type="button" data-gallery="img/youth-trip.jpg|cap.youthTrip;img/youth-night.jpg|cap.youthNight;img/youth.jpg|cap.youthNature;img/youth-christmas.jpg|cap.youthXmas;img/cafe-youth.jpg|cap.table" data-title="youth.h">
+        <img src="img/youth-trip.jpg" alt="Молодь у поїздці" data-i18n-attr="alt:cap.youthTrip" width="361" height="640" loading="lazy">
+        <span class="card__count"></span>
       </button>
-      <div class="card__body"><h3>Youth</h3><p>Молодіжні зустрічі, поїздки і табори. Віра, дружба і пригоди.</p><a href="https://www.instagram.com/youth_newhope_/" target="_blank" rel="noopener">@youth_newhope_ ↗</a></div>
+      <div class="card__body"><h3 data-i18n="youth.h">Youth</h3><p data-i18n="youth.p">Молодіжні зустрічі, поїздки і табори. Віра, дружба і пригоди.</p><a href="https://www.instagram.com/youth_newhope_/" target="_blank" rel="noopener">@youth_newhope_ ↗</a></div>
     </article>
     <article class="card reveal">
-      <button class="card__media" type="button" data-gallery="img/worship-cross.jpg|Поклоніння біля хреста;img/worship.jpg|Команда прославлення;img/worship-night.jpg|Вечір поклоніння;img/band.jpg|Музиканти;img/worship-duo.jpg|Прославлення;img/hall.jpg|Зал церкви;img/media.jpg|Медіа-команда за пультом" data-title="Worship" aria-label="Відкрити галерею: Worship">
-        <img src="img/worship.jpg" alt="Команда прославлення" width="360" height="640" loading="lazy">
-        <span class="card__count">7 фото ↗</span>
+      <button class="card__media" type="button" data-gallery="img/worship-cross.jpg|cap.wCross;img/worship.jpg|cap.wTeam;img/worship-night.jpg|cap.wNight;img/band.jpg|cap.musicians;img/worship-duo.jpg|cap.praise;img/hall.jpg|cap.hall;img/media.jpg|cap.media" data-title="worship.h">
+        <img src="img/worship.jpg" alt="Команда прославлення" data-i18n-attr="alt:cap.wTeam" width="360" height="640" loading="lazy">
+        <span class="card__count"></span>
       </button>
-      <div class="card__body"><h3>Worship</h3><p>Команда прославлення, що веде церкву в поклоніння. Співаєш чи граєш — долучайся.</p></div>
+      <div class="card__body"><h3 data-i18n="worship.h">Worship</h3><p data-i18n="worship.p">Команда прославлення, що веде церкву в поклоніння. Співаєш чи граєш — долучайся.</p></div>
     </article>
     <article class="card reveal">
-      <button class="card__media" type="button" data-gallery="img/family.jpg|Церковна сім'я;img/church-family.jpg|Святкування разом;img/service.jpg|Недільне служіння;img/shine.jpg|Радість зустрічі;img/speaker.jpg|Слово на служінні" data-title="Сімейні вечори" aria-label="Відкрити галерею: Сімейні вечори">
-        <img src="img/family.jpg" alt="Сімейний вечір у церкві" width="359" height="640" loading="lazy">
-        <span class="card__count">5 фото ↗</span>
+      <button class="card__media" type="button" data-gallery="img/family.jpg|cap.churchFamily;img/church-family.jpg|cap.celebrate;img/service.jpg|cap.service;img/shine.jpg|cap.joy;img/speaker.jpg|cap.word" data-title="family.h">
+        <img src="img/family.jpg" alt="Церковна сім'я" data-i18n-attr="alt:cap.churchFamily" width="359" height="640" loading="lazy">
+        <span class="card__count"></span>
       </button>
-      <div class="card__body"><h3>Сімейні вечори</h3><p>Теплі зустрічі для подружжя і сімей: спілкування, молитва, підтримка.</p></div>
+      <div class="card__body"><h3 data-i18n="family.h">Сімейні вечори</h3><p data-i18n="family.p">Теплі зустрічі для подружжя і сімей: спілкування, молитва, підтримка.</p></div>
     </article>
     <article class="card card--text reveal">
       <div class="card__body">
         <svg class="card__icon" viewBox="0 0 64 64" aria-hidden="true"><path d="M8 38c6-5 10-5 16 0s10 5 16 0 10-5 16 0M8 50c6-5 10-5 16 0s10 5 16 0 10-5 16 0M32 6v20M24 14h16"/></svg>
-        <h3>Хрещення</h3><p>Хочеш прийняти водне хрещення? Напиши нам — розкажемо, як підготуватися.</p>
+        <h3 data-i18n="bapt.h">Хрещення</h3><p data-i18n="bapt.p">Хочеш прийняти водне хрещення? Напиши нам — розкажемо, як підготуватися.</p>
         <a href="tel:+48788881887">+48 788 881 887</a>
       </div>
     </article>
@@ -170,51 +185,51 @@
 <!-- CAFE -->
 <section class="cafe section" id="cafe">
   <div class="cafe__text">
-    <p class="kicker reveal">04 — Кав'ярня</p>
-    <h2 class="h2 reveal">Кава після <em>служіння</em></h2>
-    <p class="reveal">Після недільного служіння ми не поспішаємо додому. У церковній кав'ярні можна взяти каву, посидіти, поговорити і познайомитися. Саме тут новенькі найшвидше стають своїми.</p>
-    <p class="cafe__note reveal">Щонеділі після служіння · ul. Michała Grażyńskiego 20</p>
+    <p class="kicker reveal" data-i18n="cafe.kicker">04 — Кав'ярня</p>
+    <h2 class="h2 reveal" data-i18n="cafe.h2">Кава після <em>служіння</em></h2>
+    <p class="reveal" data-i18n="cafe.p">Після недільного служіння ми не поспішаємо додому. У церковній кав'ярні можна взяти каву, посидіти, поговорити і познайомитися. Саме тут новенькі найшвидше стають своїми.</p>
+    <p class="cafe__note reveal" data-i18n="cafe.note">Щонеділі після служіння · ul. Michała Grażyńskiego 20</p>
   </div>
   <div class="cafe__media">
-    <button class="cafe__img reveal" type="button" data-gallery="img/cafe-coffee.jpg|Кава після служіння;img/cafe.jpg|Кав'ярня New Hope" data-title="Кав'ярня" aria-label="Відкрити галерею: Кав'ярня"><img src="img/cafe-coffee.jpg" alt="Усмішка і кава після служіння" width="720" height="1280" loading="lazy"></button>
-    <button class="cafe__img reveal" type="button" data-gallery="img/cafe.jpg|Кав'ярня New Hope;img/cafe-coffee.jpg|Кава після служіння" data-title="Кав'ярня" aria-label="Відкрити галерею: Кав'ярня"><img src="img/cafe.jpg" alt="Кав'ярня New Hope: барна стійка з кавомашиною і меню на дошці" width="1280" height="960" loading="lazy"></button>
+    <button class="cafe__img reveal" type="button" data-gallery="img/cafe-coffee.jpg|cap.coffee;img/cafe.jpg|cap.cafe" data-title="cafe.title"><img src="img/cafe-coffee.jpg" alt="Кава після служіння" data-i18n-attr="alt:cap.coffee" width="720" height="1280" loading="lazy"></button>
+    <button class="cafe__img reveal" type="button" data-gallery="img/cafe.jpg|cap.cafe;img/cafe-coffee.jpg|cap.coffee" data-title="cafe.title"><img src="img/cafe.jpg" alt="Кав'ярня New Hope" data-i18n-attr="alt:cap.cafe" width="1280" height="960" loading="lazy"></button>
   </div>
 </section>
 
 <!-- CONFERENCE -->
 <section class="conference section" id="conference">
   <div class="conference__media reveal">
-    <img src="img/conference.jpg" alt="Спікери конференції Максим та Юлія Білоусови" width="640" height="640" loading="lazy">
+    <img src="img/conference.jpg" alt="Спікери конференції Максим та Юлія Білоусови" data-i18n-attr="alt:conf.alt" width="640" height="640" loading="lazy">
   </div>
   <div class="conference__text">
-    <p class="kicker reveal">05 — Подія</p>
-    <h2 class="h2 reveal">Я чую <em>Твій голос</em></h2>
-    <p class="conference__meta reveal">Пророча конференція · 9–10 жовтня 2026</p>
-    <p class="reveal">Два дні навчання, поклоніння і практики. Біблійні основи пророчого служіння, розпізнавання Божого голосу. Спікери — Максим та Юлія Білоусови.</p>
+    <p class="kicker reveal" data-i18n="conf.kicker">05 — Подія</p>
+    <h2 class="h2 reveal" data-i18n="conf.h2">Я чую <em>Твій голос</em></h2>
+    <p class="conference__meta reveal" data-i18n="conf.meta">Пророча конференція · 9–10 жовтня 2026</p>
+    <p class="reveal" data-i18n="conf.p">Два дні навчання, поклоніння і практики. Біблійні основи пророчого служіння, розпізнавання Божого голосу. Спікери — Максим та Юлія Білоусови.</p>
     <ul class="facts reveal">
-      <li><span>Де</span>Sala Koncertowa ZPSM im. S. Moniuszki, Bielsko-Biała</li>
-      <li><span>Внесок</span>80 zł / 20 €</li>
+      <li><span data-i18n="conf.where">Де</span>Sala Koncertowa ZPSM im. S. Moniuszki, Bielsko-Biała</li>
+      <li><span data-i18n="conf.fee">Внесок</span>80 zł / 20 €</li>
     </ul>
-    <a href="https://newhope77.github.io/ya-chuyu-tviy-golos/" target="_blank" rel="noopener" class="btn btn--light reveal">Реєстрація ↗</a>
+    <a href="https://newhope77.github.io/ya-chuyu-tviy-golos/" target="_blank" rel="noopener" class="btn btn--light reveal" data-i18n="conf.btn">Реєстрація ↗</a>
   </div>
 </section>
 
 <!-- LIFE / GALLERY -->
 <section class="life section" id="life">
   <div class="life__head">
-    <p class="kicker reveal">06 — Життя церкви</p>
-    <h2 class="h2 reveal">Моменти, <em>які ми бережемо</em></h2>
+    <p class="kicker reveal" data-i18n="life.kicker">06 — Життя церкви</p>
+    <h2 class="h2 reveal" data-i18n="life.h2">Моменти, <em>які ми бережемо</em></h2>
   </div>
   <div class="masonry">
-    <img class="reveal" src="img/hall.jpg" alt="Зал церкви New Hope" width="1400" height="1050" loading="lazy">
-    <img class="reveal" src="img/band.jpg" alt="Музиканти під час поклоніння" width="361" height="640" loading="lazy">
-    <img class="reveal" src="img/shine.jpg" alt="Учасниця служіння з написом Shine" width="360" height="640" loading="lazy">
-    <img class="reveal" src="img/preach.jpg" alt="Проповідь у неділю" width="360" height="640" loading="lazy">
-    <img class="reveal" src="img/youth.jpg" alt="Молодь на природі" width="359" height="640" loading="lazy">
-    <img class="reveal" src="img/speaker.jpg" alt="Виступ на служінні" width="360" height="640" loading="lazy">
-    <img class="reveal" src="img/kids.jpg" alt="Діти на святі" width="360" height="640" loading="lazy">
+    <img class="reveal" src="img/hall.jpg" alt="Зал церкви" data-i18n-attr="alt:cap.hall" width="1400" height="1050" loading="lazy">
+    <img class="reveal" src="img/band.jpg" alt="Музиканти" data-i18n-attr="alt:cap.musicians" width="361" height="640" loading="lazy">
+    <img class="reveal" src="img/shine.jpg" alt="Радість зустрічі" data-i18n-attr="alt:cap.joy" width="360" height="640" loading="lazy">
+    <img class="reveal" src="img/preach.jpg" alt="Слово на служінні" data-i18n-attr="alt:cap.word" width="360" height="640" loading="lazy">
+    <img class="reveal" src="img/youth.jpg" alt="Молодь на природі" data-i18n-attr="alt:cap.youthNature" width="359" height="640" loading="lazy">
+    <img class="reveal" src="img/speaker.jpg" alt="Слово на служінні" data-i18n-attr="alt:cap.word" width="360" height="640" loading="lazy">
+    <img class="reveal" src="img/kids.jpg" alt="Дитяче свято в церкві" data-i18n-attr="alt:cap.kidsFest" width="360" height="640" loading="lazy">
   </div>
-  <a href="https://www.instagram.com/new.hopechurchbb/" target="_blank" rel="noopener" class="btn btn--ghost reveal">Більше в Instagram ↗</a>
+  <a href="https://www.instagram.com/new.hopechurchbb/" target="_blank" rel="noopener" class="btn btn--ghost reveal" data-i18n="life.btn">Більше в Instagram ↗</a>
 </section>
 
 <!-- TELEGRAM -->
@@ -222,54 +237,54 @@
   <a class="tg__card reveal" href="https://t.me/+852F0uPRACFiYjYy" target="_blank" rel="noopener">
     <span class="tg__icon"><svg class="tg-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.6 19.9c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.5l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.5 3c.9-.3 1.7.2 1.4 1.3z"/></svg></span>
     <span class="tg__text">
-      <span class="kicker">Спільнота в Telegram</span>
-      <span class="tg__title" id="tg-title">Долучайся до <em>нашої групи</em></span>
-      <span class="tg__sub">Новини, оголошення і розклад зустрічей — усе в одному місці. Вже понад 150 учасників.</span>
+      <span class="kicker" data-i18n="tg.kicker">Спільнота в Telegram</span>
+      <span class="tg__title" id="tg-title" data-i18n="tg.title">Долучайся до <em>нашої групи</em></span>
+      <span class="tg__sub" data-i18n="tg.sub">Новини, оголошення і розклад зустрічей — усе в одному місці. Вже понад 150 учасників.</span>
     </span>
-    <span class="btn btn--light tg__btn">Приєднатися ↗</span>
+    <span class="btn btn--light tg__btn" data-i18n="tg.btn">Приєднатися ↗</span>
   </a>
 </section>
 
 <!-- VISIT -->
 <section class="visit section" id="visit">
-  <p class="kicker reveal">07 — Як нас знайти</p>
-  <h2 class="h2 visit__title reveal">Неділя. 10:00.<br><em>Приходь як є.</em></h2>
+  <p class="kicker reveal" data-i18n="visit.kicker">07 — Як нас знайти</p>
+  <h2 class="h2 visit__title reveal" data-i18n="visit.h2">Неділя. 10:00.<br><em>Приходь як є.</em></h2>
   <div class="visit__grid">
     <div class="visit__info">
       <dl class="reveal">
-        <dt>Адреса</dt>
+        <dt data-i18n="visit.addr">Адреса</dt>
         <dd>ul. Michała Grażyńskiego 20<br>43-300 Bielsko-Biała</dd>
-        <dt>Як доїхати</dt>
-        <dd>Поруч автобусна зупинка «Grażyńskiego Okrzei». 5 хвилин пішки від вокзалу PKP.</dd>
-        <dt>Телефон</dt>
+        <dt data-i18n="visit.how">Як доїхати</dt>
+        <dd data-i18n="visit.howP">Поруч автобусна зупинка «Grażyńskiego Okrzei». 5 хвилин пішки від вокзалу PKP.</dd>
+        <dt data-i18n="visit.phone">Телефон</dt>
         <dd><a href="tel:+48788881887">+48 788 881 887</a></dd>
       </dl>
       <div class="visit__btns reveal">
-        <a href="https://www.google.com/maps/dir/?api=1&destination=Micha%C5%82a+Gra%C5%BCy%C5%84skiego+20,+43-300+Bielsko-Bia%C5%82a" target="_blank" rel="noopener" class="btn btn--light">Прокласти маршрут ↗</a>
-        <a href="tel:+48788881887" class="btn btn--ghost">Зателефонувати</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Micha%C5%82a+Gra%C5%BCy%C5%84skiego+20,+43-300+Bielsko-Bia%C5%82a" target="_blank" rel="noopener" class="btn btn--light" data-i18n="visit.route">Прокласти маршрут ↗</a>
+        <a href="tel:+48788881887" class="btn btn--ghost" data-i18n="visit.call">Зателефонувати</a>
       </div>
-      <figure class="visit__photo reveal"><img src="img/find-us.jpg" alt="Парковка біля будівлі церкви" width="361" height="640" loading="lazy"></figure>
+      <figure class="visit__photo reveal"><img src="img/find-us.jpg" alt="Парковка біля будівлі церкви" data-i18n-attr="alt:visit.parking" width="361" height="640" loading="lazy"></figure>
     </div>
     <div class="visit__map reveal">
-      <iframe title="Карта: New Hope Church, ul. Michała Grażyńskiego 20" src="https://www.google.com/maps?q=Micha%C5%82a+Gra%C5%BCy%C5%84skiego+20,+43-300+Bielsko-Bia%C5%82a&z=16&hl=uk&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe title="Карта: New Hope Church, ul. Michała Grażyńskiego 20" data-i18n-attr="title:visit.map" src="https://www.google.com/maps?q=Micha%C5%82a+Gra%C5%BCy%C5%84skiego+20,+43-300+Bielsko-Bia%C5%82a&z=16&hl=uk&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 
   <div class="bus reveal" id="bus">
-    <h3 class="bus__title">Автобусом у неділю</h3>
-    <p class="bus__lead">Міські автобуси MZK Bielsko-Biała. Час — прибуття на зупинку перед служінням о 10:00.</p>
+    <h3 class="bus__title" data-i18n="bus.title">Автобусом у неділю</h3>
+    <p class="bus__lead" data-i18n="bus.lead">Міські автобуси MZK Bielsko-Biała. Час — прибуття на зупинку перед служінням о 10:00.</p>
     <div class="bus__grid">
       <article class="bus__card bus__card--main">
         <div class="bus__lines"><span>31</span></div>
-        <h4>Зупинка «Grażyńskiego Okrzei»</h4>
-        <p class="bus__walk">~35 м — просто біля входу</p>
-        <p>Напрямок Podwale Dworzec (з Hałcnów, Komorowice).<br>Прибуває о <b>9:15</b>.</p>
-        <p class="bus__back">Назад від «Podwale Dworzec»: <b>11:38</b>, <b>13:03</b></p>
+        <h4 data-i18n="bus1.h">Зупинка «Grażyńskiego Okrzei»</h4>
+        <p class="bus__walk" data-i18n="bus1.walk">~35 м — просто біля входу</p>
+        <p data-i18n="bus1.p">Напрямок Podwale Dworzec (з Hałcnów, Komorowice).<br>Прибуває о <b>9:15</b>.</p>
+        <p class="bus__back" data-i18n="bus1.back">Назад від «Podwale Dworzec»: <b>11:38</b>, <b>13:03</b></p>
       </article>
       <article class="bus__card">
         <div class="bus__lines"><span>3</span><span>17</span><span>33</span></div>
-        <h4>Зупинка «Komorowicka TSL»</h4>
-        <p class="bus__walk">~350 м — 5 хв пішки</p>
+        <h4 data-i18n="bus2.h">Зупинка «Komorowicka TSL»</h4>
+        <p class="bus__walk" data-i18n="bus2.walk">~350 м — 5 хв пішки</p>
         <ul>
           <li><b>3</b> → Szpital Wojewódzki: 9:40 · → Komorowice: 9:01, 9:43</li>
           <li><b>17</b> → Lotnisko: 9:15</li>
@@ -278,12 +293,12 @@
       </article>
       <article class="bus__card">
         <div class="bus__lines"><span>PKP</span></div>
-        <h4>Вокзал Bielsko-Biała Główna</h4>
-        <p class="bus__walk">~400 м — 5–7 хв пішки</p>
-        <p>Зупинки «3 Maja Dworzec», «Warszawska Dworzec» — тут у неділю зупиняється більшість міських ліній. Поруч автовокзал.</p>
+        <h4 data-i18n="bus3.h">Вокзал Bielsko-Biała Główna</h4>
+        <p class="bus__walk" data-i18n="bus3.walk">~400 м — 5–7 хв пішки</p>
+        <p data-i18n="bus3.p">Зупинки «3 Maja Dworzec», «Warszawska Dworzec» — тут у неділю зупиняється більшість міських ліній. Поруч автовокзал.</p>
       </article>
     </div>
-    <p class="bus__src">Розклад може змінюватися — перевір актуальний на <a href="https://komunikacja.bielsko-biala.pl/index.php/rozklad-jazdy-do-wydruku/" target="_blank" rel="noopener">komunikacja.bielsko-biala.pl ↗</a> або в <a href="https://jakdojade.pl/bielsko-biala" target="_blank" rel="noopener">Jakdojade ↗</a></p>
+    <p class="bus__src" data-i18n="bus.src">Розклад може змінюватися — перевір актуальний на <a href="https://komunikacja.bielsko-biala.pl/index.php/rozklad-jazdy-do-wydruku/" target="_blank" rel="noopener">komunikacja.bielsko-biala.pl ↗</a> або в <a href="https://jakdojade.pl/bielsko-biala" target="_blank" rel="noopener">Jakdojade ↗</a></p>
   </div>
 </section>
 
@@ -291,7 +306,7 @@
 
 <footer class="footer">
   <div class="footer__logo" data-logo></div>
-  <p class="footer__verse">«А надія не засоромить»<br><small>Римлян 5:5</small></p>
+  <p class="footer__verse" data-i18n="footer.verse">«А надія не засоромить»<br><small>Римлян 5:5</small></p>
   <nav class="footer__links">
     <a href="https://www.instagram.com/new.hopechurchbb/" target="_blank" rel="noopener">Instagram</a>
     <a href="https://t.me/+852F0uPRACFiYjYy" target="_blank" rel="noopener">Telegram</a>
@@ -301,16 +316,16 @@
 </footer>
 
 
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Галерея" hidden>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Галерея" data-i18n-attr="aria-label:lb.label" hidden>
   <div class="lightbox__top">
     <p class="lightbox__title"></p>
     <span class="lightbox__count"></span>
-    <button class="lightbox__close" type="button" aria-label="Закрити">✕</button>
+    <button class="lightbox__close" type="button" aria-label="Закрити" data-i18n-attr="aria-label:lb.close">✕</button>
   </div>
   <div class="lightbox__stage">
-    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Попереднє фото">←</button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Попереднє фото" data-i18n-attr="aria-label:lb.prev">←</button>
     <figure class="lightbox__figure"><img alt=""><figcaption></figcaption></figure>
-    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Наступне фото">→</button>
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Наступне фото" data-i18n-attr="aria-label:lb.next">→</button>
   </div>
   <div class="lightbox__thumbs"></div>
 </div>
@@ -328,6 +343,7 @@
 </svg>
 </template>
 
-<script src="script.js"></script>
+<script src="i18n.js?v=4"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>
