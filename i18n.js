@@ -7,7 +7,7 @@ window.I18N = (() => {
   const dict = {
     uk: {
       'meta.title': 'New Hope Church Bielsko-Biała — Християнська церква «Нова Надія»',
-      'meta.desc': 'Українська християнська церква New Hope у Бельсько-Бялій. Недільне служіння щонеділі о 10:00, ul. Michała Grażyńskiego 20. Поклоніння, молодь, недільна школа, сімейні вечори.',
+      'meta.desc': 'Українська християнська церква New Hope у Бельсько-Бялій. Недільне служіння щонеділі о 10:00, молитва в середу о 17:00, домашні групи в п’ятницю о 18:00. ul. Michała Grażyńskiego 20.',
       'ui.toLight': 'Світла тема', 'ui.toDark': 'Темна тема',
       'lb.open': 'Відкрити галерею', 'cafe.title': "Кав'ярня",
       'cap.kidsFest': 'Дитяче свято в церкві', 'cap.allFamily': "Уся церковна сім'я разом",
@@ -18,6 +18,7 @@ window.I18N = (() => {
       'cap.churchFamily': "Церковна сім'я", 'cap.celebrate': 'Святкування разом', 'cap.service': 'Недільне служіння',
       'cap.joy': 'Радість зустрічі', 'cap.word': 'Слово на служінні',
       'cap.coffee': 'Кава після служіння', 'cap.cafe': "Кав'ярня New Hope",
+      'cap.homeGroup': 'Домашня група за спільною вечерею',
     },
 
     pl: {
@@ -49,6 +50,8 @@ window.I18N = (() => {
       'youth.h': 'Youth', 'youth.p': 'Spotkania młodzieżowe, wyjazdy i obozy. Wiara, przyjaźń i przygoda.',
       'worship.h': 'Worship', 'worship.p': 'Zespół uwielbienia, który prowadzi kościół w uwielbieniu. Śpiewasz albo grasz? Dołącz.',
       'family.h': 'Wieczory rodzinne', 'family.p': 'Ciepłe spotkania dla małżeństw i rodzin: rozmowy, modlitwa, wsparcie.',
+      'week.title': 'W ciągu tygodnia', 'week.sun': 'Niedziela', 'week.sunE': 'Nabożeństwo niedzielne', 'week.wed': 'Środa', 'week.wedE': 'Modlitwa', 'week.fri': 'Piątek', 'week.friE': 'Grupy domowe',
+      'home.h': 'Grupy domowe', 'home.p': 'W każdy piątek o 18:00 spotykamy się w domach w małych grupach: wspólna kolacja, Biblia, modlitwa i szczere rozmowy.',
       'bapt.h': 'Chrzest', 'bapt.p': 'Chcesz przyjąć chrzest w wodzie? Napisz do nas — powiemy, jak się przygotować.',
       'cafe.kicker': '04 — Kawiarnia', 'cafe.h2': 'Kawa po <em>nabożeństwie</em>', 'cafe.title': 'Kawiarnia',
       'cafe.p': 'Po niedzielnym nabożeństwie nie spieszymy się do domu. W kościelnej kawiarni można napić się kawy, posiedzieć, porozmawiać i poznać nowych ludzi. To właśnie tu nowi najszybciej stają się swoi.',
@@ -85,6 +88,7 @@ window.I18N = (() => {
       'cap.churchFamily': 'Kościelna rodzina', 'cap.celebrate': 'Wspólne świętowanie', 'cap.service': 'Niedzielne nabożeństwo',
       'cap.joy': 'Radość spotkania', 'cap.word': 'Słowo na nabożeństwie',
       'cap.coffee': 'Kawa po nabożeństwie', 'cap.cafe': 'Kawiarnia New Hope',
+      'cap.homeGroup': 'Grupa domowa przy wspólnej kolacji',
     },
 
     en: {
@@ -116,6 +120,8 @@ window.I18N = (() => {
       'youth.h': 'Youth', 'youth.p': 'Youth meetings, trips and camps. Faith, friendship and adventure.',
       'worship.h': 'Worship', 'worship.p': 'The worship team that leads the church in worship. Do you sing or play? Join us.',
       'family.h': 'Family evenings', 'family.p': 'Warm gatherings for couples and families: fellowship, prayer and support.',
+      'week.title': 'During the week', 'week.sun': 'Sunday', 'week.sunE': 'Sunday service', 'week.wed': 'Wednesday', 'week.wedE': 'Prayer meeting', 'week.fri': 'Friday', 'week.friE': 'Home groups',
+      'home.h': 'Home groups', 'home.p': 'Every Friday at 18:00 we meet in homes in small groups: a shared dinner, the Bible, prayer and honest conversation.',
       'bapt.h': 'Baptism', 'bapt.p': 'Want to be baptised in water? Get in touch — we’ll tell you how to prepare.',
       'cafe.kicker': '04 — Café', 'cafe.h2': 'Coffee after <em>the service</em>', 'cafe.title': 'Café',
       'cafe.p': 'After the Sunday service we’re in no hurry to go home. In the church café you can grab a coffee, sit down, chat and get to know people. This is where newcomers feel at home the fastest.',
@@ -152,6 +158,7 @@ window.I18N = (() => {
       'cap.churchFamily': 'Church family', 'cap.celebrate': 'Celebrating together', 'cap.service': 'Sunday service',
       'cap.joy': 'The joy of meeting', 'cap.word': 'Preaching at the service',
       'cap.coffee': 'Coffee after the service', 'cap.cafe': 'New Hope Café',
+      'cap.homeGroup': 'Home group over a shared dinner',
     },
   };
 
