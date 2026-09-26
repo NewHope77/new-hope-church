@@ -170,7 +170,7 @@ main{overflow-x:clip}
 .cafe{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(30px,6vw,90px);align-items:center}
 .cafe__text>p{color:var(--mute)}
 .cafe__note{font:500 13px var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--glow)!important;margin-top:28px}
-.cafe__media{display:grid;grid-template-columns:.8fr 1fr;gap:16px;align-items:center;max-width:620px}
+.cafe__media{max-width:640px}
 .cafe__img{padding:0;border:0;background:none;cursor:zoom-in;border-radius:24px;overflow:hidden}
 .cafe__img img{width:100%;height:auto;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
 .cafe__img:hover img{transform:scale(1.03)}
