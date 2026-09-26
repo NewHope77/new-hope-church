@@ -138,9 +138,12 @@ main{overflow-x:clip}
 .marquee i{font-style:normal;color:var(--glow);font-size:24px}
 
 /* about */
+.about{display:grid;grid-template-columns:1fr minmax(220px,300px);gap:clamp(32px,5vw,72px);align-items:center}
+.about__photo{margin:0}
+.about__photo img{width:100%;height:auto;border-radius:24px}
 .about__quote{font:300 clamp(28px,3.2vw,44px)/1.2 var(--serif);margin:0 0 48px;max-width:920px}
 .about__quote em{font-weight:500}
-.about__cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:920px;margin-left:auto;color:var(--mute)}
+.about__cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:920px;color:var(--mute)}
 .about__cols p{margin:0}
 .about__cols a{color:var(--ink);text-underline-offset:4px}
 
@@ -304,6 +307,8 @@ main{overflow-x:clip}
   .masonry{display:block;columns:3;column-gap:12px}
   .masonry img{margin-bottom:12px;break-inside:avoid}
   .about__cols{grid-template-columns:1fr;gap:20px}
+  .about{grid-template-columns:1fr}
+  .about__photo{max-width:320px;width:70%;justify-self:center}
 }
 @media (max-width:520px){
   .nav__name{display:none}
