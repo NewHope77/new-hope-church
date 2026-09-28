@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=Manrope:wght@400;500;700;800&family=Unbounded:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=8">
+<link rel="stylesheet" href="styles.css?v=10">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Church","name":"New Hope Church Bielsko-Biała","alternateName":"Церква New Hope","address":{"@type":"PostalAddress","streetAddress":"ul. Michała Grażyńskiego 20","postalCode":"43-300","addressLocality":"Bielsko-Biała","addressCountry":"PL"},"telephone":"+48788881887","geo":{"@type":"GeoCoordinates","latitude":49.8303965,"longitude":19.0500375},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00"},"sameAs":["https://www.instagram.com/new.hopechurchbb/","https://t.me/+852F0uPRACFiYjYy"]}
 </script>
@@ -42,6 +42,7 @@
     <a href="#cafe" data-i18n="nav.cafe">Кав'ярня</a>
     <a href="#conference" data-i18n="nav.conf">Конференція</a>
     <a href="#life" data-i18n="nav.life">Життя церкви</a>
+    <a href="#give" data-i18n="nav.give">Підтримати</a>
     <a href="#visit" class="nav__cta" data-i18n="nav.cta">Прийти в неділю</a>
   </nav>
   <div class="nav__tools">
@@ -263,9 +264,48 @@
   </a>
 </section>
 
+<!-- GIVE -->
+<section class="give section" id="give">
+  <div class="give__text">
+    <p class="kicker reveal" data-i18n="give.kicker">07 — Пожертва</p>
+    <h2 class="h2 reveal" data-i18n="give.h2">Підтримати <em>церкву</em></h2>
+    <p class="reveal" data-i18n="give.p">Якщо хочеш підтримати служіння New Hope, пожертву можна зробити банківським переказом або через BLIK. Дякуємо за кожен внесок — він допомагає церкві служити людям у Бельсько-Бялій і далі.</p>
+    <blockquote class="give__verse reveal" data-i18n="give.verse">«Бог любить того, хто з охотою дає»<small>2 Коринтян 9:7</small></blockquote>
+  </div>
+  <div class="give__card reveal">
+    <dl>
+        <div class="give__row give__row--wide">
+          <dt data-i18n="give.recipient">Отримувач</dt>
+          <dd><span class="give__val">KOŚCIÓŁ CHRZEŚCIJAŃSKI „NOWA NADZIEJA” W BIELSKU-BIAŁEJ</span><button class="give__copy" type="button" data-copy="KOŚCIÓŁ CHRZEŚCIJAŃSKI „NOWA NADZIEJA” W BIELSKU-BIAŁEJ" aria-label="Скопіювати" data-i18n-attr="aria-label:give.copy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg><span data-i18n="give.copyBtn">Копіювати</span></button></dd>
+        </div>
+        <div class="give__row give__row--wide">
+          <dt data-i18n="give.account">Рахунок (Польща)</dt>
+          <dd><span class="give__val">47 1020 1390 0000 6302 0797 7129</span><button class="give__copy" type="button" data-copy="47102013900000630207977129" aria-label="Скопіювати" data-i18n-attr="aria-label:give.copy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg><span data-i18n="give.copyBtn">Копіювати</span></button></dd>
+        </div>
+        <div class="give__row give__row--wide">
+          <dt data-i18n="give.iban">IBAN (з-за кордону)</dt>
+          <dd><span class="give__val">PL47 1020 1390 0000 6302 0797 7129</span><button class="give__copy" type="button" data-copy="PL47102013900000630207977129" aria-label="Скопіювати" data-i18n-attr="aria-label:give.copy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg><span data-i18n="give.copyBtn">Копіювати</span></button></dd>
+        </div>
+        <div class="give__row">
+          <dt data-i18n="give.swift">SWIFT / BIC</dt>
+          <dd><span class="give__val">BPKOPLPW</span><button class="give__copy" type="button" data-copy="BPKOPLPW" aria-label="Скопіювати" data-i18n-attr="aria-label:give.copy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg><span data-i18n="give.copyBtn">Копіювати</span></button></dd>
+        </div>
+        <div class="give__row">
+          <dt data-i18n="give.blik">BLIK на номер телефону</dt>
+          <dd><span class="give__val">+48 788 881 887</span><button class="give__copy" type="button" data-copy="+48788881887" aria-label="Скопіювати" data-i18n-attr="aria-label:give.copy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg><span data-i18n="give.copyBtn">Копіювати</span></button></dd>
+        </div>
+        <div class="give__row give__row--wide">
+          <dt data-i18n="give.title">Призначення платежу</dt>
+          <dd><span class="give__val">Darowizna na cele statutowe</span><button class="give__copy" type="button" data-copy="Darowizna na cele statutowe" aria-label="Скопіювати" data-i18n-attr="aria-label:give.copy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg><span data-i18n="give.copyBtn">Копіювати</span></button></dd>
+        </div>
+    </dl>
+    <p class="give__note" data-i18n="give.note">Переказ з-за кордону — через IBAN і SWIFT. BLIK — з польського банківського застосунку.</p>
+  </div>
+</section>
+
 <!-- VISIT -->
 <section class="visit section" id="visit">
-  <p class="kicker reveal" data-i18n="visit.kicker">07 — Як нас знайти</p>
+  <p class="kicker reveal" data-i18n="visit.kicker">08 — Як нас знайти</p>
   <h2 class="h2 visit__title reveal" data-i18n="visit.h2">Неділя. 10:00.<br><em>Приходь як є.</em></h2>
   <div class="visit__grid">
     <div class="visit__info">
@@ -361,7 +401,7 @@
 </svg>
 </template>
 
-<script src="i18n.js?v=8"></script>
-<script src="script.js?v=8"></script>
+<script src="i18n.js?v=10"></script>
+<script src="script.js?v=10"></script>
 </body>
 </html>

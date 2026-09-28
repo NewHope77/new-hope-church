@@ -190,6 +190,24 @@
   if (!startLang) { try { startLang = localStorage.getItem('nh-lang'); } catch (e) {} }
   I18N.apply(startLang || 'uk');
 
+
+  // give: copy bank details to clipboard
+  document.querySelectorAll('.give__copy').forEach(btn => btn.addEventListener('click', async () => {
+    const text = btn.dataset.copy;
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (e) {
+      const ta = Object.assign(document.createElement('textarea'), { value: text });
+      ta.style.cssText = 'position:fixed;opacity:0';
+      document.body.append(ta); ta.select(); document.execCommand('copy'); ta.remove();
+    }
+    const label = btn.querySelector('span');
+    btn.classList.add('is-done');
+    label.textContent = I18N.t('give.copied');
+    clearTimeout(btn._t);
+    btn._t = setTimeout(() => { btn.classList.remove('is-done'); label.textContent = I18N.t('give.copyBtn'); }, 1800);
+  }));
+
   // countdown to next Sunday 10:00 (Warsaw time); "live" during 10:00–12:00
   const out = k => document.querySelector(`[data-cd="${k}"]`);
   const grid = document.querySelector('.countdown__grid');
